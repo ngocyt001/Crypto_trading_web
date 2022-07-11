@@ -31,6 +31,17 @@
     height: 56px;
 }
 
+.header-nav-contact,
+.header-nav-partner,
+.header-nav-control {
+    height: 80px;
+}
+
+.header-nav-contact a,
+.header-nav-partner a {
+    text-decoration: none !important;
+}
+
 .header-nav-control-list {
     height: 164px;
     text-decoration: none;
@@ -54,3 +65,4 @@
 .box a {
     text-decoration: none !important;
 }
+
