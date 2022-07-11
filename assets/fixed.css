@@ -1,0 +1,56 @@
+/* Fix giao diện */
+
+.content-list-item-fixed {
+    font-size: 1.8rem !important;
+}
+
+.table {
+    font-size: 1.6rem !important;
+}
+
+.table form{
+    zoom: 1.4 !important;
+}
+
+.wraper button,
+.wraper input,
+.wraper select {
+    font-size: 1.8rem;
+}
+
+.wraper select {
+    transform: translateY(3px) !important;
+    height: 40px;
+}
+
+.modal {
+    zoom: 1.4;
+}
+
+.item-current-progress {
+    height: 56px;
+}
+
+.header-nav-control-list {
+    height: 164px;
+    text-decoration: none;
+}
+
+.header-nav-control-list a {
+    text-decoration: none !important;
+    color: #000 !important;
+}
+
+.header-infor-user-tab-list {
+    top: 52px;
+    height: 184px;
+}
+
+.header-infor-user-tab-list--item a{
+    text-decoration: none !important;
+    color: #000 !important;
+}
+
+.box a {
+    text-decoration: none !important;
+}

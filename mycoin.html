@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./font/themify-icons/themify-icons.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/dashboard.css">
+    <link rel="stylesheet" href="./assets/mycoin.css">
+    <link rel="stylesheet" href="./assets/fixed.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="./scripts/checkLogin.js"></script>
+
+    <!-- to make responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- include bootstrap css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+    
+    <!-- include jquery and bootstrap js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+    <!-- include sweetalert for displaying dialog messages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+</head>
+<body>
+
+    <div class="header">
+
+        <div class="header-right-side">
+            <div class="header-logo">
+                <img src="./img/logo.png" alt="">
+            </div>
+            
+            <div class="header-nav">
+                <div class="header-nav-control">
+                    <p class="header-nav-control--btn">My Control</p>
+                    <ul class="header-nav-control-list">
+                        <li class="header-nav-control-list--item">
+                            <a href="./dashboard.html">Dashboard</a>
+                        </li>
+                        <li class="header-nav-control-list--item">
+                            <a href="./mycoin.html">My Coins</a>
+                        </li>
+                        <li class="header-nav-control-list--item">
+                            <a href="./deposits.html">Deposit</a>
+                        </li>
+                        <li class="header-nav-control-list--item">
+                            <a href="./withdraw.html">WithDraw</a>
+                        </li>
+                    </ul>
+                </div>
+        
+                <div class="header-nav-partner">
+                    <a href="./partner.html">Partner</a>
+                </div>
+        
+                <div class="header-nav-contact">
+                    <a href="./contact.html">Contact</a>
+                </div>
+    
+            </div>
+
+        </div>
+
+        <div class="header-infor">
+            <div class="header-infor-wallet">
+                <span>$0.00</span>
+                <a>USDT</a>
+            </div>
+
+            <div class="header-infor-user">
+                <div class="header-infor-user--name">
+                    <a>ngocyt001</a>
+                </div>
+
+                <div class="header-infor-user--level">
+                    <span>Standard</span>
+                </div>
+                <div class="header-infor-user-tab">
+                    <ul class="header-infor-user-tab-list">
+                        <li class="header-infor-user-tab-list--item">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <a href="./dashboard.html">User</a>
+                        </li>
+                        <li class="header-infor-user-tab-list--item">
+                            <i class="fa-solid fa-notes-medical"></i>
+                            <a href="./mycoin.html">My Coin's List</a>
+                        </li>
+                        <li class="header-infor-user-tab-list--item">
+                            <i class="fa-solid fa-gear"></i>
+                            <a href="">Setting</a>
+                        </li>
+                        <li class="header-infor-user-tab-list--item">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <a href="" class="logOut">Log out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content-bottom">
+        
+    
+        <div class="containers">
+
+            <div class="container-wrap">
+
+                <div class="sidebar">
+                    <div class="sidebar-icon">
+                        <i class="fa-regular fa-building"></i>
+                        <a href="./index.html">Buy Coin</a>
+                    </div>
+            
+                    <div class="sidebar-icon">
+                        <i class="fa-regular fa-credit-card"></i>
+                        <a href="./mycoin.html">My Coin</a>
+                    </div>
+            
+                    <div class="sidebar-icon">
+                        <i class="fa-regular fa-circle-down"></i>
+                        <a href="./purchase.html">Buy History</a>
+                    </div>
+            
+                    <div class="sidebar-icon">
+                        <i class="fa-regular fa-circle-up"></i>
+                        <a href="./purchase.html">Sell History</a>
+                    </div>
+            
+                    <div class="sidebar-icon">
+                        <i class="fa-regular fa-address-card"></i>
+                        <a href="./dashboard.html">My Profile</a>
+                    </div>
+        
+                    <div class="sidebar-icon">
+                        <i class="fa-regular fa-money-bill-1"></i>
+                        <a href="./deposits.html">Deposits</a>
+                    </div>
+        
+                    <div class="sidebar-icon">
+                        <i class="fa-regular fa-share-from-square"></i>
+                        <a href="./withdraw.html">Withdrawal</a>
+                    </div>
+                </div>
+               
+                
+                <div class="container-list">
+
+                    
+
+
+                    <div class="content-nav">
+
+                        <div class="tabs">
+                            <div class="tab-item active">
+                              <i class="tab-icon fa-solid fa-rectangle-list"></i>
+                              Watch List
+                            </div>
+                            <div class="tab-item">
+                              <i class="tab-icon fa-solid fa-wallet"></i>
+                              Spot Wallet
+                            </div>
+                            <div class="tab-item">
+                              <i class="tab-icon fas fa-solid fa-magnifying-glass-dollar"></i>
+                              Funding wallet
+                            </div>
+                            <div class="tab-item">
+                              <i class="tab-icon fas fa-solid fa-bolt"></i>
+                              Transaction fee
+                            </div>
+                            <div class="line"></div>
+                          </div>
+                        
+                    </div>
+        
+                    <div class="content-list">
+                        <div class="content-list-item content-list-item-fixed active">
+                            <div class="wraper" style="margin-top: 10px; margin-bottom: 20px;">
+     
+                                <!-- button to add task -->
+                                <div class="row" style="margin-bottom: 20px;">
+                                    <div class="col-md-12">
+                                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addTaskModal">Add Watching List</button>
+                                        
+                                        <!-- form to delete project -->
+                                        <form method="POST" onsubmit="return taskObj.deleteProject(this);" style="display: contents;">
+                                            <select name="project" class="form-control" style="display: initial; width: 200px; margin-left: 5px; margin-right: 5px;" id="form-task-hour-calculator-all-projects"></select>
+                                            <input type="submit" class="btn btn-danger" value="Delete Coin List">
+                                        </form>
+                                    
+                                    </div>
+                                </div>
+                             
+                            </div>
+                        
+                            <!-- show all tasks -->
+                            <table class="table">
+                                <caption class="text-center">All Coin Listing</caption>
+                                    <tr>
+                                        <th>Target</th>
+                                        <th>Coin's Name</th>
+                                        <th>Status</th>
+                                        <th>Watching time</th>
+                                        <th>Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                            
+                                <tbody id="all-tasks"></tbody>
+                            </table>
+                        
+                            <!-- modal to add project and task -->
+                            <div class="modal fade" id="addTaskModal" tabindex="-1">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Add Coins</h5>
+                                            <button class="close" type="button" data-dismiss="modal">x</button>
+                                        </div>
+                            
+                                        <div class="modal-body">
+                                            <form method="POST" onsubmit="return taskObj.addTask(this);" id="form-task-hour-calculator">
+                                                
+                                                <!-- select project from already created -->
+                                                <div class="form-group">
+                                                    <label>Watching Coin</label>
+                                                    <select name="project" id="add-task-project" class="form-control" required></select>
+                                                </div>
+                            
+                                                <!-- create new project -->
+                                                <div class="form-group">
+                                                    <label>New Coin Adding</label>
+                                                    <input type="text" name="new_project" id="add-project" class="form-control" placeholder="Project Name">
+                            
+                                                    <button type="button" onclick="taskObj.addProject();" class="btn btn-primary" style="margin-top: 10px;">Add Coin To List</button>
+                                                </div>
+                            
+                                                <!-- enter task -->
+                                                <div class="form-group">
+                                                    <label>Target</label>
+                                                    <input type="text" name="task" class="form-control" placeholder="What target do you looking for ?" required />
+                                                </div>
+                                            </form>
+                                        </div>
+                            
+                                        <!-- form submit button -->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="submit" form="form-task-hour-calculator" class="btn btn-primary">Add Task</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="content-list-item">
+                            <div class="list-item-heading">
+                                <span>Watch List</span> 
+                                <i class="fa-solid fa-circle-info"></i>
+                            </div>
+            
+                            <ul class="list-item-current">
+                                <div class="item-current">
+                                    <div class="item-current-icon">
+                                        <i class="down-trend fa-regular fa-circle-down"></i>
+                                    </div>
+            
+                                    <div class="item-current-title">
+                                        <span class="item-current-title-text">Bitcoin - BTC</span>
+                                        <div class="item-current-title-tag item-current-title-tag-intro"> 
+                                            <i class="item-current-title-icon fa-solid fa-pen-ruler"></i>
+                                            Priority Watch
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-info">
+                                        <div class="item-current-info-time">
+                                            246.745.745
+                                        </div>
+            
+                                        <div class="item-current-info-volumn">
+                                            Volumn
+                                        </div>
+            
+                                    </div>
+            
+            
+                                    <div class="item-current-user">
+                                        <img src="./img/bitcoin.png" alt="" class="item-current-user-img">
+                                        <div class="item-current-user-info">
+                                            <p>Price</p>
+                                            <span>21.000</span>
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-progress">
+                                        <i class="item-current-complete fa-solid fa-circle"></i>
+                                        <span>Meet Taget</span>
+                                    </div>
+        
+            
+                                    <div class="item-current-option">
+                                        <i class="item-current-option-icon fa-solid fa-ellipsis"></i>
+                                    </div>
+            
+                                </div>
+                                
+                            </ul>
+            
+            
+                            <ul class="list-item-current">
+                                <div class="item-current">
+                                    <div class="item-current-icon">
+                                        <i class="up-trend fa-regular fa-circle-up"></i>
+                                    </div>
+            
+                                    <div class="item-current-title">
+                                        <span class="item-current-title-text">Ethereum - ETH</span>
+                                        <div class="item-current-title-tag"> 
+                                            <i class="item-current-title-icon fa-solid fa-pen-ruler"></i>
+                                            Watching Later
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-info">
+                                        <div class="item-current-info-time">
+                                            246.745.745
+                                        </div>
+            
+                                        <div class="item-current-info-volumn">
+                                            Volumn
+                                        </div>
+                                    </div>
+                                    
+            
+                                    <div class="item-current-user">
+                                        <img src="./img/ethereum.png" alt="" class="item-current-user-img">
+                                        <div class="item-current-user-info">
+                                            <p>Price</p>
+                                            <span>1.265</span>
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-progress">
+                                        <i class="item-current-in-progress fa-solid fa-circle"></i>
+                                        <span>In Pending</span>
+                                    </div>
+            
+                                    <div class="item-current-option">
+                                        <i class="item-current-option-icon fa-solid fa-ellipsis"></i>
+                                    </div>
+            
+                                </div>
+                                
+                            </ul>
+            
+                            <ul class="list-item-current">
+                                <div class="item-current">
+                                    <div class="item-current-icon">
+                                        <i class="down-trend fa-regular fa-circle-down"></i>
+                                    </div>
+            
+                                    <div class="item-current-title">
+                                        <span class="item-current-title-text">Solana - SOL</span>
+                                        <div class="item-current-title-tag item-current-title-tag-tool"> 
+                                            <i class="item-current-title-icon fa-solid fa-pen-ruler"></i>
+                                            2nd Watching
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-info">
+                                        <div class="item-current-info-time">
+                                            246.745.745
+                                        </div>
+            
+                                        <div class="item-current-info-volumn">
+                                            Volumn
+                                        </div>
+            
+                                    </div>
+            
+            
+                                    <div class="item-current-user">
+                                        <img src="./img/solana.png" alt="" class="item-current-user-img">
+                                        <div class="item-current-user-info">
+                                            <p>price</p>
+                                            <span>41</span>
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-progress">
+                                        <i class="item-current-in-review fa-solid fa-circle"></i>
+                                        <span>In Watching</span>
+                                    </div>
+            
+                                    <div class="item-current-option">
+                                        <i class="item-current-option-icon fa-solid fa-ellipsis"></i>
+                                    </div>
+            
+                                </div>
+                                
+                            </ul>
+            
+                            <ul class="list-item-current">
+                                <div class="item-current">
+                                    <div class="item-current-icon">
+                                        <i class="up-trend fa-regular fa-circle-up"></i>
+                                    </div>
+            
+                                    <div class="item-current-title">
+                                        <span class="item-current-title-text">Dogecoin - Doge</span>
+                                        <div class="item-current-title-tag item-current-title-tag-envi"> 
+                                            <i class="item-current-title-icon fa-solid fa-pen-ruler"></i>
+                                            3rd Watching
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-info">
+                                        <div class="item-current-info-time">
+                                            246.745.745
+                                        </div>
+            
+                                        <div class="item-current-info-volumn">
+                                            Volumn
+                                        </div>
+                                    </div>
+            
+            
+                                    <div class="item-current-user">
+                                        <img src="./img/dogecoin.png" alt="" class="item-current-user-img">
+                                        <div class="item-current-user-info">
+                                            <p>Price</p>
+                                            <span>0.00005</span>
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-progress">
+                                        <i class="item-current-in-progress fa-solid fa-circle"></i>
+                                        <span>In Pending</span>
+                                    </div>
+            
+                                    <div class="item-current-option">
+                                        <i class="item-current-option-icon fa-solid fa-ellipsis"></i>
+                                    </div>
+            
+                                </div>
+                                
+                            </ul>
+            
+                        </div>
+
+                        <div class="content-list-item">
+                            <div class="list-item-heading">
+                                <span>Watch List</span> 
+                                <i class="fa-solid fa-circle-info"></i>
+                            </div>
+            
+                            <ul class="list-item-current">
+                                <div class="item-current">
+                                    <div class="item-current-icon">
+                                        <i class="down-trend fa-regular fa-circle-down"></i>
+                                    </div>
+            
+                                    <div class="item-current-title">
+                                        <span class="item-current-title-text">Bitcoin - BTC</span>
+                                        <div class="item-current-title-tag item-current-title-tag-intro"> 
+                                            <i class="item-current-title-icon fa-solid fa-pen-ruler"></i>
+                                            Priority Watch
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-info">
+                                        <div class="item-current-info-time">
+                                            246.745.745
+                                        </div>
+            
+                                        <div class="item-current-info-volumn">
+                                            Volumn
+                                        </div>
+            
+                                    </div>
+            
+            
+                                    <div class="item-current-user">
+                                        <img src="./img/bitcoin.png" alt="" class="item-current-user-img">
+                                        <div class="item-current-user-info">
+                                            <p>Price</p>
+                                            <span>21.000</span>
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-progress">
+                                        <i class="item-current-complete fa-solid fa-circle"></i>
+                                        <span>Meet Taget</span>
+                                    </div>
+        
+            
+                                    <div class="item-current-option">
+                                        <i class="item-current-option-icon fa-solid fa-ellipsis"></i>
+                                    </div>
+            
+                                </div>
+                                
+                            </ul>
+            
+            
+                            <ul class="list-item-current">
+                                <div class="item-current">
+                                    <div class="item-current-icon">
+                                        <i class="up-trend fa-regular fa-circle-up"></i>
+                                    </div>
+            
+                                    <div class="item-current-title">
+                                        <span class="item-current-title-text">Ethereum - ETH</span>
+                                        <div class="item-current-title-tag"> 
+                                            <i class="item-current-title-icon fa-solid fa-pen-ruler"></i>
+                                            Watching Later
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-info">
+                                        <div class="item-current-info-time">
+                                            246.745.745
+                                        </div>
+            
+                                        <div class="item-current-info-volumn">
+                                            Volumn
+                                        </div>
+                                    </div>
+                                    
+            
+                                    <div class="item-current-user">
+                                        <img src="./img/ethereum.png" alt="" class="item-current-user-img">
+                                        <div class="item-current-user-info">
+                                            <p>Price</p>
+                                            <span>1.265</span>
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-progress">
+                                        <i class="item-current-in-progress fa-solid fa-circle"></i>
+                                        <span>In Pending</span>
+                                    </div>
+            
+                                    <div class="item-current-option">
+                                        <i class="item-current-option-icon fa-solid fa-ellipsis"></i>
+                                    </div>
+            
+                                </div>
+                                
+                            </ul>
+            
+                            <ul class="list-item-current">
+                                <div class="item-current">
+                                    <div class="item-current-icon">
+                                        <i class="down-trend fa-regular fa-circle-down"></i>
+                                    </div>
+            
+                                    <div class="item-current-title">
+                                        <span class="item-current-title-text">Solana - SOL</span>
+                                        <div class="item-current-title-tag item-current-title-tag-tool"> 
+                                            <i class="item-current-title-icon fa-solid fa-pen-ruler"></i>
+                                            2nd Watching
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-info">
+                                        <div class="item-current-info-time">
+                                            246.745.745
+                                        </div>
+            
+                                        <div class="item-current-info-volumn">
+                                            Volumn
+                                        </div>
+            
+                                    </div>
+            
+            
+                                    <div class="item-current-user">
+                                        <img src="./img/solana.png" alt="" class="item-current-user-img">
+                                        <div class="item-current-user-info">
+                                            <p>price</p>
+                                            <span>41</span>
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-progress">
+                                        <i class="item-current-in-review fa-solid fa-circle"></i>
+                                        <span>In Watching</span>
+                                    </div>
+            
+                                    <div class="item-current-option">
+                                        <i class="item-current-option-icon fa-solid fa-ellipsis"></i>
+                                    </div>
+            
+                                </div>
+                                
+                            </ul>
+            
+                            <ul class="list-item-current">
+                                <div class="item-current">
+                                    <div class="item-current-icon">
+                                        <i class="up-trend fa-regular fa-circle-up"></i>
+                                    </div>
+            
+                                    <div class="item-current-title">
+                                        <span class="item-current-title-text">Dogecoin - Doge</span>
+                                        <div class="item-current-title-tag item-current-title-tag-envi"> 
+                                            <i class="item-current-title-icon fa-solid fa-pen-ruler"></i>
+                                            3rd Watching
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-info">
+                                        <div class="item-current-info-time">
+                                            246.745.745
+                                        </div>
+            
+                                        <div class="item-current-info-volumn">
+                                            Volumn
+                                        </div>
+                                    </div>
+            
+            
+                                    <div class="item-current-user">
+                                        <img src="./img/dogecoin.png" alt="" class="item-current-user-img">
+                                        <div class="item-current-user-info">
+                                            <p>Price</p>
+                                            <span>0.00005</span>
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-progress">
+                                        <i class="item-current-in-progress fa-solid fa-circle"></i>
+                                        <span>In Pending</span>
+                                    </div>
+            
+                                    <div class="item-current-option">
+                                        <i class="item-current-option-icon fa-solid fa-ellipsis"></i>
+                                    </div>
+            
+                                </div>
+                                
+                            </ul>
+            
+                        </div>
+
+
+                        <div class="content-list-item">
+                            <div class="list-item-heading">
+                                <span>Watch List</span> 
+                                <i class="fa-solid fa-circle-info"></i>
+                            </div>
+            
+                            <ul class="list-item-current">
+                                <div class="item-current">
+                                    <div class="item-current-icon">
+                                        <i class="down-trend fa-regular fa-circle-down"></i>
+                                    </div>
+            
+                                    <div class="item-current-title">
+                                        <span class="item-current-title-text">Bitcoin - BTC</span>
+                                        <div class="item-current-title-tag item-current-title-tag-intro"> 
+                                            <i class="item-current-title-icon fa-solid fa-pen-ruler"></i>
+                                            Priority Watch
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-info">
+                                        <div class="item-current-info-time">
+                                            246.745.745
+                                        </div>
+            
+                                        <div class="item-current-info-volumn">
+                                            Volumn
+                                        </div>
+            
+                                    </div>
+            
+            
+                                    <div class="item-current-user">
+                                        <img src="./img/bitcoin.png" alt="" class="item-current-user-img">
+                                        <div class="item-current-user-info">
+                                            <p>Transaction Charge</p>
+                                            <span>21.000</span>
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-progress">
+                                        <i class="item-current-complete fa-solid fa-circle"></i>
+                                        <span>Meet Taget</span>
+                                    </div>
+        
+            
+                                    <div class="item-current-option">
+                                        <i class="item-current-option-icon fa-solid fa-ellipsis"></i>
+                                    </div>
+            
+                                </div>
+                                
+                            </ul>
+            
+            
+                            <ul class="list-item-current">
+                                <div class="item-current">
+                                    <div class="item-current-icon">
+                                        <i class="up-trend fa-regular fa-circle-up"></i>
+                                    </div>
+            
+                                    <div class="item-current-title">
+                                        <span class="item-current-title-text">Ethereum - ETH</span>
+                                        <div class="item-current-title-tag"> 
+                                            <i class="item-current-title-icon fa-solid fa-pen-ruler"></i>
+                                            Watching Later
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-info">
+                                        <div class="item-current-info-time">
+                                            246.745.745
+                                        </div>
+            
+                                        <div class="item-current-info-volumn">
+                                            Volumn
+                                        </div>
+                                    </div>
+                                    
+            
+                                    <div class="item-current-user">
+                                        <img src="./img/ethereum.png" alt="" class="item-current-user-img">
+                                        <div class="item-current-user-info">
+                                            <p>Transaction Charge</p>
+                                            <span>1.265</span>
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-progress">
+                                        <i class="item-current-in-progress fa-solid fa-circle"></i>
+                                        <span>In Pending</span>
+                                    </div>
+            
+                                    <div class="item-current-option">
+                                        <i class="item-current-option-icon fa-solid fa-ellipsis"></i>
+                                    </div>
+            
+                                </div>
+                                
+                            </ul>
+            
+                            <ul class="list-item-current">
+                                <div class="item-current">
+                                    <div class="item-current-icon">
+                                        <i class="down-trend fa-regular fa-circle-down"></i>
+                                    </div>
+            
+                                    <div class="item-current-title">
+                                        <span class="item-current-title-text">Solana - SOL</span>
+                                        <div class="item-current-title-tag item-current-title-tag-tool"> 
+                                            <i class="item-current-title-icon fa-solid fa-pen-ruler"></i>
+                                            2nd Watching
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-info">
+                                        <div class="item-current-info-time">
+                                            246.745.745
+                                        </div>
+            
+                                        <div class="item-current-info-volumn">
+                                            Volumn
+                                        </div>
+            
+                                    </div>
+            
+            
+                                    <div class="item-current-user">
+                                        <img src="./img/solana.png" alt="" class="item-current-user-img">
+                                        <div class="item-current-user-info">
+                                            <p>Transaction Charge</p>
+                                            <span>41</span>
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-progress">
+                                        <i class="item-current-in-review fa-solid fa-circle"></i>
+                                        <span>In Watching</span>
+                                    </div>
+            
+                                    <div class="item-current-option">
+                                        <i class="item-current-option-icon fa-solid fa-ellipsis"></i>
+                                    </div>
+            
+                                </div>
+                                
+                            </ul>
+            
+                            <ul class="list-item-current">
+                                <div class="item-current">
+                                    <div class="item-current-icon">
+                                        <i class="up-trend fa-regular fa-circle-up"></i>
+                                    </div>
+            
+                                    <div class="item-current-title">
+                                        <span class="item-current-title-text">Dogecoin - Doge</span>
+                                        <div class="item-current-title-tag item-current-title-tag-envi"> 
+                                            <i class="item-current-title-icon fa-solid fa-pen-ruler"></i>
+                                            3rd Watching
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-info">
+                                        <div class="item-current-info-time">
+                                            246.745.745
+                                        </div>
+            
+                                        <div class="item-current-info-volumn">
+                                            Volumn
+                                        </div>
+                                    </div>
+            
+            
+                                    <div class="item-current-user">
+                                        <img src="./img/dogecoin.png" alt="" class="item-current-user-img">
+                                        <div class="item-current-user-info">
+                                            <p>Transaction Charge</p>
+                                            <span>0.00005</span>
+                                        </div>
+                                    </div>
+            
+                                    <div class="item-current-progress">
+                                        <i class="item-current-in-progress fa-solid fa-circle"></i>
+                                        <span>In Pending</span>
+                                    </div>
+            
+                                    <div class="item-current-option">
+                                        <i class="item-current-option-icon fa-solid fa-ellipsis"></i>
+                                    </div>
+            
+                                </div>
+                                
+                            </ul>
+                        </div>
+                        
+                        
+                    </div>
+
+                </div>
+            </div>
+
+            
+            <div class="footer">
+                <div class="box-container">
+                    <div class="box">
+                        <h3>Products</h3>
+                        <a href="#">Blockchain Explorer</a>
+                        <a href="#">Crypto API</a>
+                        <a href="#">Crypto Indices</a>
+                        <a href="#">Jobs Board</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+            
+                    <div class="box">
+                        <h3>Company</h3>
+                        <a href="#">About us</a>
+                        <a href="#">Terms of use</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Disclaimer</a>
+                        <a href="#">Methodology</a>
+                        <a href="#">CareersWe’re hiring!</a>
+                    </div>
+            
+                    <div class="box">
+                        <h3>Support</h3>
+                        <a href="#">Request Form</a>
+                        <a href="#">Contact Support</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Glossary</a>
+                    </div>
+            
+                    <div class="box">
+                        <h3>Contact Us</h3>
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Telegram</a>
+                        <a href="#">Interactive Chat</a>                
+                    </div>
+                
+                </div>
+            
+                <div class="credit"> Copyright © <span>Shopcoin.com</span> | all rights reserved </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+<script src="./scripts/app.js"></script>
+<script src="./scripts/mycoin.js"></script>
+</html>
+
